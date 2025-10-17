@@ -1,0 +1,1 @@
+# Hotel_Project_2025-26-NagyTamas-HorvathBenedek-PG

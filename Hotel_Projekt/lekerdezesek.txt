@@ -1,0 +1,61 @@
+1. Összes szoba száma
+SELECT COUNT(*) AS 'Összes szoba' FROM szobak;
+
+2. Foglalt szobák száma
+SELECT COUNT(DISTINCT szobaid) AS 'Jelenleg foglalt szobák száma'
+FROM foglalasok f
+JOIN vendegek v ON f.vendegid = v.vendegsorszam
+WHERE v.allapot = 'foglalt';
+
+3. Szabad szobák listája
+SELECT s.szobanev
+FROM szobak s
+LEFT JOIN foglalasok f ON s.szobaazonosito = f.szobaid
+LEFT JOIN vendegek v ON f.vendegid = v.vendegsorszam
+WHERE v.allapot = 'szabad' OR v.allapot = 'lemondva'
+GROUP BY s.szobanev;
+
+4. Átlagos vendégszám foglalásonként
+SELECT ROUND(AVG(szallofo), 2) AS 'Átlagos vendégszám' FROM foglalasok;
+
+5. Vendégek nemzetiségi megoszlása
+SELECT nemzetiseg AS 'Nemzetiség', COUNT(*) AS 'Vendégek száma'
+FROM vendegek
+GROUP BY nemzetiseg
+ORDER BY COUNT(*) DESC;
+
+6. Aktuálisan tartózkodó vendégek (mai dátum alapján)
+SELECT v.vendegnev AS 'Vendég neve', s.szobanev AS 'Szoba', f.erkezes AS 'Érkezés', f.tavozas AS 'Távozás'
+FROM foglalasok f
+JOIN vendegek v ON f.vendegid = v.vendegsorszam
+JOIN szobak s ON f.szobaid = s.szobaazonosito
+WHERE CURDATE() BETWEEN f.erkezes AND f.tavozas;
+
+7. Lemondott foglalások száma
+SELECT COUNT(*) AS 'Lemondott foglalások száma'
+FROM vendegek
+WHERE allapot = 'lemondva';
+
+8. Leggyakrabban foglalt szoba
+SELECT s.szobanev AS 'Szoba neve', COUNT(f.foglalasid) AS 'Foglalások száma'
+FROM foglalasok f
+JOIN szobak s ON f.szobaid = s.szobaazonosito
+GROUP BY s.szobanev
+ORDER BY COUNT(f.foglalasid) DESC
+LIMIT 1;
+
+9. Közelgő foglalások (a következő 7 napban)
+SELECT v.vendegnev AS 'Vendég neve', s.szobanev AS 'Szoba', f.erkezes AS 'Érkezés', f.tavozas AS 'Távozás'
+FROM foglalasok f
+JOIN vendegek v ON f.vendegid = v.vendegsorszam
+JOIN szobak s ON f.szobaid = s.szobaazonosito
+WHERE f.erkezes BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)
+ORDER BY f.erkezes ASC;
+
+
+
+
+
+
+
+

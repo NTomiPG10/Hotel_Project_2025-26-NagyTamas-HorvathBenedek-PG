@@ -1,0 +1,12 @@
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\bin\Debug\heavenHotel.exe.config
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\bin\Debug\heavenHotel.exe
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\bin\Debug\heavenHotel.pdb
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.csproj.AssemblyReference.cache
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.Properties.Resources.resources
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.csproj.GenerateResource.cache
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.csproj.CoreCompileInputs.cache
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.exe
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.pdb
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.exe.config
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.Foglaláskezelő.resources
+C:\Users\Mónika\Desktop\Hotel_Projekt\heavenHotel\obj\Debug\heavenHotel.APEH.resources

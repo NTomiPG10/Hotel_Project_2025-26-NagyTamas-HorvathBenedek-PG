@@ -14,7 +14,7 @@ CREATE TABLE vendegek (
     vendegsorszam INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     vendegnev VARCHAR(100) NOT NULL,
     telefonszam VARCHAR(20) NOT NULL,
-    allapot VARCHAR(50) NOT NULL,
+    allapot ENUM('szabad','foglalt','fizetett','lemondva') NOT NULL,
     nemzetiseg VARCHAR(50) NOT NULL
 );
 
@@ -46,26 +46,26 @@ INSERT INTO szobak (szobanev, agyszam, potagyszam) VALUES
 
 -- Vendégek (20 db)
 INSERT INTO vendegek (vendegnev, telefonszam, allapot, nemzetiseg) VALUES
-('Kiss Péter', '06201234567', 'Foglalt', 'Magyar'),
-('Nagy Anna', '06301239876', 'Fizetett', 'Magyar'),
-('Smith John', '00442011223344', 'Foglalt', 'Angol'),
-('Müller Franz', '0049123456789', 'Lemondta', 'Német'),
-('Takahashi Yui', '0081309876543', 'Fizetett', 'Japán'),
-('Popescu Andrei', '0040123456789', 'Foglalt', 'Román'),
-('Garcia Maria', '0034609876543', 'Foglalt', 'Spanyol'),
-('Dupont Elise', '0033145678901', 'Fizetett', 'Francia'),
-('Johnson Emily', '0012023456789', 'Foglalt', 'Amerikai'),
-('Ivanov Sergey', '0079123456789', 'Foglalt', 'Orosz'),
-('Novák László', '06202223344', 'Lemondta', 'Magyar'),
-('Horváth Dóra', '06204445566', 'Fizetett', 'Magyar'),
-('Sato Haru', '0081345678901', 'Foglalt', 'Japán'),
-('Kim Jihoon', '0082209876543', 'Foglalt', 'Koreai'),
-('Anderson Mark', '0013105556677', 'Fizetett', 'Amerikai'),
-('Lopez Carlos', '0034602233445', 'Foglalt', 'Spanyol'),
-('Liu Wei', '0086123456789', 'Foglalt', 'Kínai'),
-('Kovács Dániel', '06305556677', 'Fizetett', 'Magyar'),
-('Szabó Réka', '06306667788', 'Foglalt', 'Magyar'),
-('Tóth Bence', '06207778899', 'Fizetett', 'Magyar');
+('Kiss Péter', '06201234567', 'foglalt', 'Magyar'),
+('Nagy Anna', '06301239876', 'fizetett', 'Magyar'),
+('Smith John', '00442011223344', 'foglalt', 'Angol'),
+('Müller Franz', '0049123456789', 'lemondva', 'Német'),
+('Takahashi Yui', '0081309876543', 'fizetett', 'Japán'),
+('Popescu Andrei', '0040123456789', 'foglalt', 'Román'),
+('Garcia Maria', '0034609876543', 'foglalt', 'Spanyol'),
+('Dupont Elise', '0033145678901', 'fizetett', 'Francia'),
+('Johnson Emily', '0012023456789', 'foglalt', 'Amerikai'),
+('Ivanov Sergey', '0079123456789', 'lemondva', 'Orosz'),
+('Novák László', '06202223344', 'lemondva', 'Magyar'),
+('Horváth Dóra', '06204445566', 'fizetett', 'Magyar'),
+('Sato Haru', '0081345678901', 'foglalt', 'Japán'),
+('Kim Jihoon', '0082209876543', 'foglalt', 'Koreai'),
+('Anderson Mark', '0013105556677', 'fizetett', 'Amerikai'),
+('Lopez Carlos', '0034602233445', 'foglalt', 'Spanyol'),
+('Liu Wei', '0086123456789', 'foglalt', 'Kínai'),
+('Kovács Dániel', '06305556677', 'szabad', 'Magyar'),
+('Szabó Réka', '06306667788', 'foglalt', 'Magyar'),
+('Tóth Bence', '06207778899', 'fizetett', 'Magyar');
 
 -- Foglalások (20 db)
 INSERT INTO foglalasok (vendegid, szobaid, erkezes, tavozas, szallofo) VALUES

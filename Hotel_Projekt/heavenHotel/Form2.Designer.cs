@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.cbLekerdezesek = new System.Windows.Forms.ComboBox();
             this.btnFuttat = new System.Windows.Forms.Button();
@@ -68,11 +69,14 @@
             // 
             // dgvEredmeny
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.dgvEredmeny.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEredmeny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEredmeny.Location = new System.Drawing.Point(41, 112);
             this.dgvEredmeny.Name = "dgvEredmeny";
             this.dgvEredmeny.Size = new System.Drawing.Size(608, 226);
             this.dgvEredmeny.TabIndex = 3;
+            this.dgvEredmeny.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEredmeny_CellContentClick);
             // 
             // btnExportPDF
             // 

@@ -87,7 +87,7 @@
             // 
             // btnKeres
             // 
-            this.btnKeres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnKeres.BackColor = System.Drawing.Color.LightGreen;
             this.btnKeres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeres.ForeColor = System.Drawing.Color.Black;
             this.btnKeres.Location = new System.Drawing.Point(497, 77);
@@ -96,6 +96,7 @@
             this.btnKeres.TabIndex = 5;
             this.btnKeres.Text = "Szabad szobák keresése";
             this.btnKeres.UseVisualStyleBackColor = false;
+            this.btnKeres.Click += new System.EventHandler(this.btnKeres_Click);
             // 
             // dgvTalalatok
             // 
@@ -105,6 +106,7 @@
             this.dgvTalalatok.Name = "dgvTalalatok";
             this.dgvTalalatok.Size = new System.Drawing.Size(661, 226);
             this.dgvTalalatok.TabIndex = 6;
+            this.dgvTalalatok.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTalalatok_CellContentClick);
             // 
             // lblJavaslat
             // 
@@ -130,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(685, 389);
+            this.ClientSize = new System.Drawing.Size(684, 389);
             this.Controls.Add(this.btnAPEH);
             this.Controls.Add(this.lblJavaslat);
             this.Controls.Add(this.dgvTalalatok);

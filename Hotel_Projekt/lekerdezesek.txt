@@ -7,6 +7,12 @@ FROM foglalasok f
 JOIN vendegek v ON f.vendegid = v.vendegsorszam
 WHERE v.allapot = 'foglalt';
 
+SELECT COUNT(DISTINCT szobaazonosito) AS 'Jelenleg foglalt szobák száma'
+FROM szobak s
+JOIN foglalasok f ON f.szobaid = s.szobaazonosito
+JOIN vendegek v ON f.vendegid = v.vendegsorszam
+WHERE v.allapot = 'foglalt';
+
 3. Szabad szobák listája
 SELECT s.szobanev
 FROM szobak s
@@ -51,6 +57,7 @@ JOIN vendegek v ON f.vendegid = v.vendegsorszam
 JOIN szobak s ON f.szobaid = s.szobaazonosito
 WHERE f.erkezes BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)
 ORDER BY f.erkezes ASC;
+
 
 
 

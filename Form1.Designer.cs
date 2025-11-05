@@ -37,6 +37,8 @@
             this.dgvTalalatok = new System.Windows.Forms.DataGridView();
             this.lblJavaslat = new System.Windows.Forms.Label();
             this.btnAPEH = new System.Windows.Forms.Button();
+            this.btnFoglalas = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTalalatok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +78,7 @@
             this.dtpErkezes.Name = "dtpErkezes";
             this.dtpErkezes.Size = new System.Drawing.Size(141, 20);
             this.dtpErkezes.TabIndex = 3;
+            this.dtpErkezes.ValueChanged += new System.EventHandler(this.dtpErkezes_ValueChanged);
             // 
             // dtpTavozas
             // 
@@ -84,13 +87,14 @@
             this.dtpTavozas.Name = "dtpTavozas";
             this.dtpTavozas.Size = new System.Drawing.Size(141, 20);
             this.dtpTavozas.TabIndex = 4;
+            this.dtpTavozas.ValueChanged += new System.EventHandler(this.dtpTavozas_ValueChanged);
             // 
             // btnKeres
             // 
             this.btnKeres.BackColor = System.Drawing.Color.LightGreen;
             this.btnKeres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKeres.ForeColor = System.Drawing.Color.Black;
-            this.btnKeres.Location = new System.Drawing.Point(497, 77);
+            this.btnKeres.Location = new System.Drawing.Point(518, 75);
             this.btnKeres.Name = "btnKeres";
             this.btnKeres.Size = new System.Drawing.Size(176, 23);
             this.btnKeres.TabIndex = 5;
@@ -104,14 +108,14 @@
             this.dgvTalalatok.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvTalalatok.Location = new System.Drawing.Point(12, 121);
             this.dgvTalalatok.Name = "dgvTalalatok";
-            this.dgvTalalatok.Size = new System.Drawing.Size(661, 226);
+            this.dgvTalalatok.Size = new System.Drawing.Size(682, 226);
             this.dgvTalalatok.TabIndex = 6;
             this.dgvTalalatok.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTalalatok_CellContentClick);
             // 
             // lblJavaslat
             // 
             this.lblJavaslat.AutoSize = true;
-            this.lblJavaslat.Location = new System.Drawing.Point(333, 77);
+            this.lblJavaslat.Location = new System.Drawing.Point(344, 62);
             this.lblJavaslat.Name = "lblJavaslat";
             this.lblJavaslat.Size = new System.Drawing.Size(148, 13);
             this.lblJavaslat.TabIndex = 7;
@@ -119,7 +123,7 @@
             // 
             // btnAPEH
             // 
-            this.btnAPEH.Location = new System.Drawing.Point(500, 353);
+            this.btnAPEH.Location = new System.Drawing.Point(521, 353);
             this.btnAPEH.Name = "btnAPEH";
             this.btnAPEH.Size = new System.Drawing.Size(173, 24);
             this.btnAPEH.TabIndex = 8;
@@ -127,12 +131,36 @@
             this.btnAPEH.UseVisualStyleBackColor = true;
             this.btnAPEH.Click += new System.EventHandler(this.btnAPEH_Click_1);
             // 
+            // btnFoglalas
+            // 
+            this.btnFoglalas.Location = new System.Drawing.Point(13, 353);
+            this.btnFoglalas.Name = "btnFoglalas";
+            this.btnFoglalas.Size = new System.Drawing.Size(168, 23);
+            this.btnFoglalas.TabIndex = 9;
+            this.btnFoglalas.Text = "Foglalás";
+            this.btnFoglalas.UseVisualStyleBackColor = true;
+            this.btnFoglalas.Click += new System.EventHandler(this.btnFoglalas_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(327, 84);
+            this.label1.MaximumSize = new System.Drawing.Size(185, 30);
+            this.label1.MinimumSize = new System.Drawing.Size(185, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 30);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
+            // 
             // Foglaláskezelő
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(684, 389);
+            this.ClientSize = new System.Drawing.Size(706, 389);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnFoglalas);
             this.Controls.Add(this.btnAPEH);
             this.Controls.Add(this.lblJavaslat);
             this.Controls.Add(this.dgvTalalatok);
@@ -162,6 +190,8 @@
         private System.Windows.Forms.DataGridView dgvTalalatok;
         private System.Windows.Forms.Label lblJavaslat;
         private System.Windows.Forms.Button btnAPEH;
+        private System.Windows.Forms.Button btnFoglalas;
+        private System.Windows.Forms.Label label1;
     }
 }
 
